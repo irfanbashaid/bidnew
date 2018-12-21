@@ -1,0 +1,228 @@
+<div>
+  <div class="banner-top container-fluid" id="home">
+
+      <!-- header -->
+      <!--
+      INDEX : 
+      HEADER  - 1.0 
+      SLIDER - 1.1
+      <P>roduxt</P>
+      
+      1.0 HEADER
+  -->
+  
+      <marquee style="background-color: #209fed; color: #fff; padding: 10px"><span style="margin-left: 10vw; letter-spacing: 4px">Upto 95% discount for winners.</span> <span style="margin-left: 10vw; letter-spacing: 4px">Huge opportunity to grab deals.</span><span style="margin-left: 10vw; letter-spacing: 4px">Blockchain based platform.</span></marquee>
+      <header>
+          <div class="row">
+  
+              <div class="col-md-3 logo-grraabit text-left">
+                  <h1 class="logo-grraabit">
+                    <img routerLink="/home" src="./assets/images/logo-03.png" alt="" width="250px;">
+                  </h1>
+              </div>
+  
+              <div class="col-md-9 top-info-cart text-right mt-lg-4" style="padding-top: 50px">
+            <!-- user div  open-->
+
+                            <div *ngIf="user">
+                            <ul class="cart-inner-info">
+                                <li class="button-log">
+                                    <a class="btn-open" href="" (click)="clear_fields()"><span class="fa fa-user" aria-hidden="true"></span> Login</a>
+                                </li>
+                                <li class="button-log">
+                                    <a routerLink="/signup"><span class="fa fa-user-plus" aria-hidden="true"></span> Signup</a> 
+                                </li>
+                                <li class="button-log">
+                                    <span class="fa fa-camera" aria-hidden="true"></span> My Deals
+                                </li>
+                                <li class="button-log">
+                                    <a routerLink="/contactus"><span class="fa fa-question-circle" aria-hidden="true"></span> About Us</a>
+                                </li>
+                                <li class="button-log">
+                                    <a routerLink="/howitworks"><span class="fa fa-question-circle" aria-hidden="true"></span> How it Works?</a>
+                                </li>
+                                
+                            </ul>
+                            </div>
+
+            <!-- user div  close-->
+            <!-- owner div open -->
+
+                <div *ngIf="owner">
+                <ul class="cart-inner-info">
+                    <li class="button-log">
+                        <a class="btn-open" routerLink="/signup"><span class="fa fa-user" aria-hidden="true"></span> Create Auction</a>
+                    </li>
+                    <li class="button-log">
+                        <a routerLink="/signup"><span class="fa fa-user-plus" aria-hidden="true"></span> Select</a> 
+                    </li>
+                    <li class="button-log">
+                        <a routerLink="/contactus"><span class="fa fa-question-circle" aria-hidden="true"></span>Send Credits</a>
+                    </li>
+                    <li class="button-log">
+                        <a routerLink="/howitworks"><span class="fa fa-question-circle" aria-hidden="true"></span> Change Ownership</a>
+                    </li>
+                    <li class="button-log">
+                        <a routerLink="/signup"><span class="fa fa-user-plus" aria-hidden="true"></span> Finalize</a> 
+                    </li>
+                </ul>
+            </div>
+
+            <!-- owner div close -->
+                  <!---->
+                  <div class="overlay-login text-left">
+                      <button type="button" class="overlay-close1">
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                      <div class="wrap">
+                          <h5 class="text-center mb-4">Login Now</h5>
+                          <div class="login p-5 mx-auto mw-100">
+                              <form>
+                                  <div class="form-group">
+                                      <label class="mb-2">Email address</label>
+                                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="" required="" autocomplete="off">
+                                  </div> 
+                                  <div class="form-group">
+                                      <label class="mb-2">Password</label>
+                                      <input type="password" class="form-control" id="password" placeholder="" required="" autocomplete="off">
+                                  </div>
+                                  <div class="form-group">
+                                        <label class="mb-2">Private Key</label>
+                                        <input type="text" class="form-control" id="privatekey" aria-describedby="emailHelp" placeholder="" required="" autocomplete="off"> 
+                                        <small id="emailHelp" class="form-text" style="color: #fff">We'll never share your details with anyone else.</small>
+                                    </div>
+                                  
+                                  <button (click)="login()" class="btn btn-primary mb-4">Sign In</button>
+  
+                              </form>
+                              <div class="alert alert-warning alert-dismissible" id="notify" *ngIf="notification">
+                                    <a (click)="dismiss_notification()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong></strong>&nbsp;&nbsp;&nbsp;{{ error_message }}
+                             </div>
+                          </div>
+                          <!---->
+                      </div>
+  
+  
+  
+                      <h4 class="tittle-grraabit two text-center my-lg-4 mt-3" style="color: #fff">Deal Countdown</h4>
+                      <div class="simply-countdown-custom" id="simply-countdown-custom-1"></div>
+  
+  
+                  </div>
+                  <!---->
+              </div>
+          </div>
+  
+  
+  
+      </header>
+  
+      <!-- //header -->
+  
+  </div>
+  
+  <div><router-outlet></router-outlet></div>
+  <!--footer -->
+  <footer class="py-lg-5 py-3">
+      <div class="container-fluid px-lg-5 px-3">
+          <div class="row footer-top-grraabit">
+              <div class="col-lg-4 footer-grid-w3ls">
+                  <div class="footer-title">
+                      <h3>About Us</h3>
+                  </div>
+                  <div class="footer-text">
+                      <p>Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at tellus. Nulla porttitor accumsana tincidunt.</p>
+                      <ul class="footer-social text-left mt-lg-4 mt-3">
+  
+                          <li class="mx-2">
+                              <a href="#">
+                                  <span class="fab fa-facebook-f"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                              <a href="#">
+                                  <span class="fab fa-twitter"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                              <a href="#">
+                                  <span class="fab fa-google-plus-g"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                              <a href="#">
+                                  <span class="fab fa-linkedin-in"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                              <a href="#">
+                                  <span class="fas fa-rss"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                              <a href="#">
+                                  <span class="fab fa-vk"></span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-4 footer-grid-w3ls">
+                  <div class="footer-title">
+                      <h3>Get in touch</h3>
+                  </div>
+                  <div class="contact-info">
+                      <h4>Location :</h4>
+                      <p>F7,1st floor, Swastik manandi, Arcade, SC road, Sheshadripuram.</p>
+                      <div class="phone">
+                          <h4>Contact :</h4>
+                          <p>Phone : +91 994 513 9900</p>
+                          <p>Email :
+                              <a href="mailto:info@example.com">info@ajnasoft.com</a>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 footer-grid-w3ls">
+                  <div class="footer-title">
+                      <h3>Quick Links</h3>
+                  </div>
+                  <ul class="links">
+                      <li>
+                          <a (click)="goto()" routerLink="/home">Home</a>
+                      </li>
+                      <li class="button-log">
+                            <a class="btn-open" href="" (click)="clear_fields()" aria-hidden="true">Login</a>
+                        </li>
+                      <li>
+                          <a routerLink="/signup">Signup</a>
+                      </li>
+                      <li>
+                          <a href="myaccounts.html">My Accounts</a>
+                      </li>
+                      <li>
+                          <a routerLink="/terms">Terms and Conditions</a>
+                      </li>
+  
+  
+                  </ul>
+              </div>
+  
+          </div>
+          <div class="copyright-grraabit mt-4">
+              <p class="copy-right text-center ">&copy; 2018 grraabit. Powered by
+                  <a href="https://ajnasoft.com/"> Ajnasoft </a>
+              </p>
+          </div>
+      </div>
+  </footer>
+  <!-- //footer -->
+  
+  
+ 
+  <!--// end-smoth-scrolling -->
+  <!-- js file -->  
+</div>
+
+

@@ -1,0 +1,118 @@
+<body class="navbar-bottom">
+    <div class="page-header page-header-inverse">
+       <div class="navbar navbar-inverse navbar-transparent" style="margin-bottom:20px">
+          <div class="navbar-header">
+             <a class="navbar-brand"></a>
+             <ul class="nav navbar-nav pull-right visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-grid3"></i></a></li>
+             </ul>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-mobile">
+              <div class="row">
+                  <div class="col-sm-5 ">           
+                          <h4 style="font-family: Comic Sans MS; font-size: 40px;font-weight: 300;">Grraabit</h4>             
+                  </div>
+                  <div class="col-sm-4 topspace">
+                      <h4 style="font-family: Comic Sans MS; font-size: 16px;text-transform: uppercase; font-weight: 300;">You have <span>&nbsp;{{balance}}</span>&nbsp;credits</h4>
+                      </div>
+                 <div class="col-sm-2 topspace">
+                      <div class="navbar-right">
+                              <ul class="nav navbar-nav">
+                                 <li class="dropdown dropdown-user">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="texttransform">{{user_name}}</span>
+                                    <i class="caret"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                       <li><a (click) = "check(5)"><i class="icon-profile"></i> My Account</a></li>
+                                       <li><a (click) = "check(6)"><i class="icon-history"></i> Bid Logs</a></li>                                         
+                                       <li><a (click) = "check(7)"><i class="icon-cash"></i> Win History</a></li>
+                                       <li class="divider"></li>
+                                       <li><a (click) = "onLogout()"><i class="icon-switch2"></i> Logout</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div> 
+                      </div>   
+                  </div>                            
+              </div>
+          </div>
+
+       <div class="navbar navbar-inverse navbar-transparent" id="navbar-second">
+          <ul class="nav navbar-nav visible-xs-block">
+             <li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+          </ul>
+          <div class="navbar-collapse collapse" id="navbar-second-toggle">
+             <ul class="nav navbar-nav navbar-nav-material">
+                <li>
+                   <a (click) = "check(1)"><span class="icon-select2"></span> Live Auction </a>
+                </li>
+                <li>
+                  <a (click) = "check(2)"><span class="icon-cart2"></span> Closed Auction </a>
+                </li>
+                <li>
+                  <a (click) = "check(3)"><span class="icon-spinner3 spinner position-left"></span> Upcoming Auction </a>
+                </li>
+                <li>
+                  <a (click) = "check(4)"><span class="icon-gift position-left"></span> Meet Winners </a>
+                </li>  
+                <li>
+                  <a (click) = "check(8)">Pre-registration</a>
+               </li>               
+             </ul>
+          </div>
+       </div>
+    </div>
+    <div class="page-container" style="min-height:452px">
+      <div class="page-content">
+        <div class="content-wrapper">
+          <div class="row">
+              <div class="container-fluid" [ngSwitch]="optionselected">
+                <div *ngSwitchCase="1">
+                    <app-liveauction></app-liveauction>
+                </div>
+                <div *ngSwitchCase="2">
+                    <app-closedauction></app-closedauction>
+                </div>
+                <div *ngSwitchCase="3">
+                    <app-upcomingauction></app-upcomingauction>
+                </div>
+                <div *ngSwitchCase="4">
+                    <app-meetwinners></app-meetwinners>
+                </div>
+                <div *ngSwitchCase="5">
+                    <app-myaccount></app-myaccount>
+                </div>
+                <div *ngSwitchCase="6">
+                    <app-bidlog></app-bidlog>
+                </div>
+                <div *ngSwitchCase="7">
+                    <app-winhistory></app-winhistory>
+                </div>
+                <div *ngSwitchCase="8">
+                        <app-preregister></app-preregister>
+                     </div>
+              </div>              
+          </div>
+        </div>
+      </div>
+    </div>   
+    </body>
+    <div class="navbar navbar-default  navbar-fixed-bottom footer">
+      <ul class="nav navbar-nav visible-xs-block">
+         <li><a class="text-center collapsed" data-toggle="collapse" data-target="#footer"><i class="icon-circle-up2"></i></a></li>
+      </ul>
+      <div class="navbar-collapse collapse" id="footer">
+         <div class="navbar-text">
+            &copy; 2018. <a href="#" class="navbar-link">Grraabit Auction</a> by <a href="http://chainflux.com/" class="navbar-link" target="_blank">Chainflux</a>
+         </div>
+         <div class="navbar-right">
+            <ul class="nav navbar-nav">
+               <li><a href="http://chainflux.com/about" target="_blank">About</a></li>
+               <li><a href="http://chainflux.com/terms" target="_blank">Terms</a></li>
+               <li><a href="http://chainflux.com/contactus" target="_blank">Contact</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div><ngx-spinner></ngx-spinner></div>

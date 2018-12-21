@@ -1,0 +1,127 @@
+.texttransform{
+    text-transform:uppercase;
+    font-size: 15px;
+ }
+ 
+ .topspace{
+    margin: 25px 0  0 0;
+ }
+
+ .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* height:5%; */
+    background-color:white;
+    color: white;
+    text-align: center;
+ } 
+.footermargin{
+    margin: 50px 0 0 0;
+}
+/* 
+   nav{
+    background-color: #3d4d65;
+}
+#mainmenu li a {
+ display: block;
+ line-height: 50px;
+ font-size: 18px;
+ text-transform: uppercase;
+ font-weight: 500;
+ padding: 0 27px;
+ text-shadow: 0 0 1px rgba(61,77,101,0.25);    
+}
+.navbar-default .navbar-nav>li>a:active {
+ color: #ff9948;
+}
+a{
+cursor: pointer;
+ border-left: 2px solid whitesmoke;
+}
+.navbar-default .navbar-nav>li>a {
+ color: #fff;
+}
+a:active{
+
+ color: #ff9948;
+}
+
+a.final{
+ border-right: 2px solid whitesmoke;
+}
+
+.fonttransformation{
+ margin-top: 10%;
+ text-transform: uppercase;
+}
+
+ .hr-text {
+     line-height: 1em;
+     position: relative;
+     outline: 0;
+     border: 0;
+     color: #3d4d65;
+     font-weight: bold;
+     text-align: center;
+     height: 1.5em;
+     font-size: 30px;
+   }
+   .hr-text:before {
+     content: '';
+     background: linear-gradient(to right, transparent, #818078, transparent);
+     position: absolute;
+     left: 0;
+     top: 50%;
+     width: 100%;
+     height: 1px;
+   }
+   .hr-text:after {
+     content: attr(data-content);
+     position: relative;
+     display:inline-block;
+     color: #3d4d65;;
+     padding: 0 .5em;
+     line-height: 1.5em;
+     
+     color: #3d4d65;
+     background-color: #fcfcfa;
+   }
+
+
+   .btn-warning {
+     color: #fff;
+     background-color: #ff9948;
+     border-color: #ff9948;
+ }
+ .btn {
+     display: inline-block;
+     padding: 6px 12px;
+     margin-bottom: 0;
+     font-size: 14px;
+     font-weight: 700;
+     line-height: 1.42857143;
+     text-align: center;
+     white-space: nowrap;
+     vertical-align: middle;
+     -ms-touch-action: manipulation;
+     touch-action: manipulation;
+     cursor: pointer;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     background-image: none;
+     border: 1px solid transparent;
+     border-radius: 4px;
+ }
+
+ .dropdown-menu1>li{
+     text-transform: uppercase;
+     border-bottom: 2px solid whitesmoke;
+ }
+ .dropdown-menu:active{
+     color: black;
+ }*/
+ 
