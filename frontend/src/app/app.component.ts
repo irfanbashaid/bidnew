@@ -15,6 +15,7 @@ export class AppComponent {
   owner:boolean;
   _web3:any;
   constructor(private grab:GrabitService,private route:Router) { 
+    
   }
 
 hideURLbar() {
@@ -45,8 +46,6 @@ login(){
     access.grab.setPrivateKey(prikey).then(res=>{
       _detail['publickey']=access.grab._etherumAccountAddress;
       if(res==true){
-          console.log(_detail);
-          
         access.grab.login(_detail).subscribe(
           res => {           
             access.grab.setToken(res['token']);
@@ -55,17 +54,13 @@ login(){
                 access.close_toggle()
                 access.owner=true;
                 access.user=false;
-                access.route.navigate(['/owner']);
-                console.log('owner');
-                
+                access.route.navigate(['/createAuction']);
               }
               else{
                 access.close_toggle();
                 access.user=true;
                 access.owner=false;
                 access.route.navigate(['/user']);
-                console.log('user');
-                
               }
             }),
             (document.getElementById("email")as HTMLInputElement).value="";
@@ -73,8 +68,6 @@ login(){
             (document.getElementById("privatekey")as HTMLInputElement).value="";
           },
           err => {   
-            console.log(err);
-            
             this.error_message='Invalid Credentials';
             this.show_notification();     
           }
@@ -82,7 +75,6 @@ login(){
       }
       else if(res== false){
         this.error_message='User Not Found';
-
         this.show_notification();
       }
     }) 

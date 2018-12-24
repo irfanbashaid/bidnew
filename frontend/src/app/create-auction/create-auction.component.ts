@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { GrabitService } from '../service/grabit.service';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
+
 @Component({
-  selector: 'app-owner',
-  templateUrl: './owner.component.html',
-  styleUrls: ['./owner.component.css']
+  selector: 'app-create-auction',
+  templateUrl: './create-auction.component.html',
+  styleUrls: ['./create-auction.component.css']
 })
-export class OwnerComponent implements OnInit {
+export class CreateAuctionComponent implements OnInit {
 
   filepath;
   public selectedFile: any;

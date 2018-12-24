@@ -8,8 +8,8 @@ import { GrabitService } from '../service/grabit.service';
 export class SignupComponent implements OnInit {
 
   public _web3;
-  public account_address;
-  public private_key;
+  public account_address='';
+  public private_key='';
   public signupnotify:number = 0;
   public prikeynotify:boolean =false;
   public formerror:string='';
@@ -29,9 +29,9 @@ export class SignupComponent implements OnInit {
     let object=meta._web3.eth.accounts.create();
     meta.account_address=object['address'];
     meta.private_key=object['privateKey'].substring(2); 
-    (document.getElementById('privatekey') as HTMLInputElement).type = "text";
-    (document.getElementById('privatekey') as HTMLInputElement).readOnly=true;
-    (document.getElementById('privatekey') as HTMLInputElement).value = meta.private_key;
+    (document.getElementById('privatekeyid') as HTMLInputElement).type = "text";
+    (document.getElementById('privatekeyid') as HTMLInputElement).readOnly=true;
+    (document.getElementById('privatekeyid') as HTMLInputElement).value = meta.private_key;
     console.log(meta.private_key);
     meta.prikeynotify = true;
   }
@@ -47,9 +47,9 @@ export class SignupComponent implements OnInit {
     else{
       meta.account_address = '';
       meta.private_key = '';
-      (document.getElementById('privatekey') as HTMLInputElement).value = '';
-      (document.getElementById('privatekey') as HTMLInputElement).readOnly=false;
-      (document.getElementById('privatekey') as HTMLInputElement).type = "password";
+      (document.getElementById('privatekeyid') as HTMLInputElement).value = '';
+      (document.getElementById('privatekeyid') as HTMLInputElement).readOnly=false;
+      (document.getElementById('privatekeyid') as HTMLInputElement).type = "password";
     }
   }
 
@@ -57,8 +57,16 @@ export class SignupComponent implements OnInit {
     let meta = this;
     meta.formerror = '';
     meta.signupnotify = 0;
-    if(username.trim()==''||email.trim()==''||password1.trim()==''||password2.trim()==''||privatekey.trim()==''||privatekey.trim().length!=64){
+    privatekey = privatekey.trim();
+    let prikeylen = privatekey.length;
+    username = username.trim();
+    email = email.trim();
+    if(username==''||email==''||password1.trim()==''||password2.trim()==''||privatekey==''){
       meta.formerror = 'Please Fill all the Details Correctly';
+      return;
+    }
+    else if(!(prikeylen==64||(prikeylen==66 && privatekey.substring(0,2) !='0x'))){
+      meta.formerror ='Please Enter A Valid Privatekey';
       return;
     }
     else if(password1.trim() != password2.trim()){
@@ -68,6 +76,9 @@ export class SignupComponent implements OnInit {
     else if(!(document.getElementById('checkboxid') as HTMLInputElement).checked){
       meta.formerror = 'Please Tick The Check Box';
       return;
+    }
+    if(prikeylen==66){
+      privatekey=privatekey.substring(2);
     }
     let detail={};
     let obj = meta._web3.eth.accounts.privateKeyToAccount('0x'+privatekey);
@@ -95,13 +106,13 @@ export class SignupComponent implements OnInit {
     meta.private_key='';
     meta.prikeynotify =false;
     meta.formerror='';
-    (document.getElementById('privatekey') as HTMLInputElement).value = '';
-    (document.getElementById('privatekey') as HTMLInputElement).readOnly=false;
-    (document.getElementById('privatekey') as HTMLInputElement).type = "password";
+    (document.getElementById('privatekeyid') as HTMLInputElement).value = '';
+    (document.getElementById('privatekeyid') as HTMLInputElement).readOnly=false;
+    (document.getElementById('privatekeyid') as HTMLInputElement).type = "password";
     (document.getElementById('newtoethswitch') as HTMLInputElement).checked = false;
     (document.getElementById('checkboxid') as HTMLInputElement).checked = false;
     (document.getElementById('username') as HTMLInputElement).value = '';
-    (document.getElementById('email') as HTMLInputElement).value = '';
+    (document.getElementById('emailidid') as HTMLInputElement).value = '';
     (document.getElementById('password1') as HTMLInputElement).value = '';
     (document.getElementById('password2') as HTMLInputElement).value = '';
   }

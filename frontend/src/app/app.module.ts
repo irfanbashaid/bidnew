@@ -8,9 +8,13 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
 import { TermsComponent } from './terms/terms.component';
 import { HttpClientModule } from '@angular/common/http';
-import { OwnerComponent } from './owner/owner.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { CreateAuctionComponent } from './create-auction/create-auction.component';
+import { ChangeownerComponent } from './changeowner/changeowner.component';
+import { SelectComponent } from './select/select.component';
+import { SendcreditsComponent } from './sendcredits/sendcredits.component';
+import { SetresultComponent } from './setresult/setresult.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +24,12 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     SignupComponent,
     HowitworksComponent,
     TermsComponent,
-    OwnerComponent,
-    SignupComponent
+    SignupComponent,
+    CreateAuctionComponent,
+    ChangeownerComponent,
+    SelectComponent,
+    SendcreditsComponent,
+    SetresultComponent
   ],
   imports: [
     BrowserModule,

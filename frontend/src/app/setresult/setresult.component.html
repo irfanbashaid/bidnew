@@ -1,0 +1,48 @@
+
+<div class="container">
+
+  <div class="row">
+    <!-- <div class="col-md-3"></div> -->
+    <div class="col-md-12">
+      <div class="form-style-10">
+        <h1 style="text-align: center">FINALIZE RESULT</h1>
+        <div class="panel-body">        
+          <div class="table-responsive">
+            <table class="table table-bordered table-framed">
+                <thead>
+                    <tr>
+                      <th>Auction Id</th>
+                      <th>Product Name </th>
+                      <th>Start Time </th>
+                      <th>End Time </th>
+                      <th>Base Price </th>
+                      <th>Bid Increment </th>
+                      <th>Minimum Bid </th>
+                      <th>Last Bidder </th>
+                      <th>Reset Time </th>
+                      <th>Last Bid Amount </th>
+                      <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="trhighlighting" *ngFor="let element of finalizeresult">                
+                      <td>{{ element.auctionid }}</td>
+                      <td>{{ element.productname }}</td>
+                      <td>{{ element.start_time }}</td>
+                      <td>{{ element.end_time }}</td>
+                      <td>{{ element.basePrice }}</td>
+                      <td>{{ element.bidIncrement }}</td>
+                      <td>{{ element.minBid }}</td>
+                      <td>{{ element.lastBidder }}</td>
+                      <td>{{ element.resetTime }}</td>
+                      <td>{{ element.lastBidDetails_amount }}</td>
+                      <td><button type="button" class="btn btn-warning btn-lg" (click)="setresult(element.auctionid)" *ngIf="!element.buttonshow">Finalize</button></td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

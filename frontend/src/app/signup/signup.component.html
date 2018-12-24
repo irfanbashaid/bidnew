@@ -18,7 +18,7 @@
     
                             <div class="section"><span>2</span>Email </div>
                             <div class="inner-wrap">
-                                <label>Email Address <input type="email" id="email" class="form-control" aria-describedby="emailHelp" required autocomplete="off" name="field3" #email minlength="4"/></label>
+                                <label>Email Address <input type="email" id="emailidid" class="form-control" aria-describedby="emailHelp" required autocomplete="off" name="field3" #emailId minlength="4"/></label>
                             </div>
     
                             <div class="section"><span>3</span>Passwords</div>
@@ -28,7 +28,7 @@
                             </div>
                             <div class="section"><span>4</span>Ethereum Private Key</div>
                             <div class="inner-wrap">
-                                <label>Private Key<input type="text" id="privatekey" name="prikey" #privatekey/></label><br>
+                                <label>Private Key<input type="password" id="privatekeyid" name="prikey" #privatekeyinsert/></label><br>
                                 <small>Don't Have one?, Click here</small>
                                 <label class="switch">
                                     <input type="checkbox" id="newtoethswitch" (click)="switchClick()"/>
@@ -53,7 +53,7 @@
                             </div>                        
                             <br><br>
                             <div class="button-section">
-                                <input type="button" (click)="signup(username.value,email.value,password1.value,password2.value,privatekey.value)" value="Sign Up" />
+                                <input type="button" (click)="signup(username.value,emailId.value,password1.value,password2.value,privatekeyinsert.value)" value="Sign Up" />
                                 <span class="privacy-policy">
                                    <input type="checkbox" name="field7" id="checkboxid"> You agree to our Terms and Policy. 
                                 </span>

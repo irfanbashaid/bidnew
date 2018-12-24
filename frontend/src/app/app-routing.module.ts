@@ -4,8 +4,12 @@ import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
 import { TermsComponent } from './terms/terms.component';
-import { OwnerComponent } from './owner/owner.component';
 import { SignupComponent } from './signup/signup.component';
+import { ChangeownerComponent } from './changeowner/changeowner.component';
+import { CreateAuctionComponent } from './create-auction/create-auction.component';
+import { SetresultComponent } from './setresult/setresult.component';
+import { SelectComponent } from './select/select.component';
+import { SendcreditsComponent } from './sendcredits/sendcredits.component';
 
 const routes: Routes = [
   {
@@ -29,8 +33,24 @@ const routes: Routes = [
     component:TermsComponent
   },
   {
-    path:'owner',
-    component:OwnerComponent
+    path:'changeowner',
+    component:ChangeownerComponent
+  },
+  {
+    path:'createAuction',
+    component:CreateAuctionComponent
+  },
+  {
+    path:'sendcredits',
+    component:SendcreditsComponent
+  },
+  {
+    path:'setresult',
+    component:SetresultComponent
+  },
+  {
+    path:'select',
+    component:SelectComponent
   },
   {
     path:'',
